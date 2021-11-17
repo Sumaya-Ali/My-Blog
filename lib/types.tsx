@@ -27,8 +27,8 @@ export type IdsType ={
 export type Results ={
   data: Result;
   currentPage: string;
-  Ids: IdsType;
-  setIds: Function;
+//Ids: IdsType;
+//  setIds: Function;
 }
 export type blogPost = {
 data: Post;

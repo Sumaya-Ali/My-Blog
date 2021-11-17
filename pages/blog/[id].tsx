@@ -125,7 +125,7 @@ export const getStaticProps: GetStaticProps= async(context) => {
 export const getStaticPaths: GetStaticPaths = async (props) => {
 
  // const {Ids} = useSelector((state: RootStateOrAny) =>state.Ids);
- const state = store.getState();
+// const state = store.getState();
 
   const res = await fetch('https://microservice.newsifier.com/api/v2/article/scopes/lat/get/0',{
 
@@ -144,7 +144,7 @@ let paths = posts.map((item) => ({
 
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
  
 }

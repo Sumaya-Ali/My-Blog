@@ -19,7 +19,9 @@ const Home: NextPage<Results> = (props) => {
   
   let posts : Posts = props.data.data;
   
-  let { currentPage, setIds} = props;
+ 
+  //, setIds
+  let { currentPage} = props;
 
   let nextDisabled = parseInt(currentPage,10) === TotalPages;
 
@@ -32,7 +34,7 @@ const Home: NextPage<Results> = (props) => {
 
   const nextPageUrl = `/blogs/${parseInt(currentPage,10) + 1}`;
   
-  
+  /*
   const Ids : Array<String> = [];
 
   posts.forEach(function(item)
@@ -43,17 +45,17 @@ const Home: NextPage<Results> = (props) => {
  
 const dispatch  = useDispatch();
 dispatch(set_Ids(Ids));
-
+*/
   return (
     <div className="mx-auto my-8 w-12/12 min-h-screen">
       <Head>
         
-        <title>Sumaya's Blog</title>
+        <title>Sumaya&apos;s Blog</title>
         <meta name="description" content="Blog app" />
         
       </Head>
 <header className="mb-20">
-  <h1  className="text-6xl font-bold text-center text-gray-700">Welcome to Sumaya Ali's Blog</h1>
+  <h1  className="text-6xl font-bold text-center text-gray-700">Welcome to Sumaya Ali&apos;s Blog</h1>
 </header>
       <main >
         
@@ -61,19 +63,28 @@ dispatch(set_Ids(Ids));
         
         {
 
-
-
-
+/*
+<img
+    src={item.image}
+    alt={item.title}
+    className="rounded-t-lg h-60 w-full object-cover"
+  /> 
+*/
 posts.map((item,index) => (
 
 
   <div key={index} className="w-1/4 flex-grow rounded-lg shadow-xl bg-white ml-5 mt-0 mb-5 ">
-  <img
-    src={item.image}
-    alt={item.title}
-    className="rounded-t-lg h-60 w-full object-cover"
+<Image 
+  src={item.image}
+  alt={item.title}
+  width={2250}
+    height={1390}
+    layout="responsive"
+  className="rounded-t-lg h-60 w-full object-cover"
   />
+
  
+  
   <header className=" text-xl font-extrabold p-4 text-gray-500">{item.title}</header>
   <div className="px-5">
     <p className="text-gray-500 px-4 mb-3">
